@@ -1,0 +1,17 @@
+<p>This page lists out the countries.</p>
+
+<ul>
+    {{ range site.Taxonomies.country_refs }}
+       {{/* we store the .Page object so we can use it inside the following `with` context */}}
+       {{ $countryPage := .Page }}
+       {{ with index site.Data.wcountries $countryPage.Data.Term }}
+         <li>
+        <a href="{{ $countryPage.RelPermalink }}">
+          <p>{{ .Country }} , {{ .country_code }}</p>
+        </a>
+         </li>
+       {{ end }}
+    {{ end }}
+</ul>
+    
+<p>Declaration/Disclaimer: The data on this page and the website is downloaded from Kaggle website. I am only using this data for learning purposes - more specifically, learning how to use a json and csv in <a href="https://gohugo.io" target="_blank">goHugo</a>. I neither own the dataset nor I do have any idea of its correctness. This dataset can be found and downloaded from <a href="https://www.kaggle.com/datasets/fernandol/countries-of-the-world" target="_blank">https://www.kaggle.com/datasets/fernandol/countries-of-the-world</a></p>

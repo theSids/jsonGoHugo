@@ -1,0 +1,9 @@
+<p>This page will list the details of the country</p>
+
+{{ with index site.Data.wcountries .Data.Term }}
+    Country Name: {{ .Country }} Country Code: {{ .country_code }}
+{{ end }}
+<br>
+
+
+<p>Declaration/Disclaimer: The data on this page and the website is downloaded from Kaggle website. I am only using this data for learning purposes - more specifically, learning how to use a json and csv in <a href="https://gohugo.io" target="_blank">goHugo</a>. I neither own the dataset nor I do have any idea of its correctness. This dataset can be found and downloaded from <a href="https://www.kaggle.com/datasets/fernandol/countries-of-the-world" target="_blank">https://www.kaggle.com/datasets/fernandol/countries-of-the-world</a></p>
